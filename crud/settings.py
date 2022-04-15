@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # Added Packages
     'rest_framework',
+    'corsheaders',
 
     # Added
     'enroll',
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'crud.urls'
@@ -141,6 +143,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.renderers.JSONRenderer',
 #     )
 # }
+
+# For CORs origin
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Activate Django-Heroku.
 django_on_heroku.settings(locals())
